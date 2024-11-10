@@ -6,9 +6,11 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
@@ -58,6 +60,7 @@ public class TomatoListener implements Listener {
     */
 
     //Ativado ao quebrar um bloco
+    /*
     @EventHandler
     public void breakBlockEvent(BlockBreakEvent event) {
 
@@ -75,7 +78,25 @@ public class TomatoListener implements Listener {
             player.sendMessage(ChatColor.LIGHT_PURPLE+ " bloco quebrado");
         }
     }
+    */
 
+    //Solta raio pelo machado
+    @EventHandler
+    public void thor(PlayerInteractEvent event){
+
+        if(event.getAction() == Action.RIGHT_CLICK_AIR){
+
+            Player player = event.getPlayer();
+
+            if(event.getMaterial() == Material.DIAMOND_AXE){
+
+                Location eyeLocation = player.getEyeLocation();
+                player.getWorld().strikeLightning(eyeLocation);
+                player.sendMessage(ChatColor.WHITE + "Raio!");
+
+            }
+        }
+    }
 
 
 
