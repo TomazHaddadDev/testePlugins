@@ -88,14 +88,21 @@ public class TomatoListener implements Listener {
 
             Player player = event.getPlayer();
 
-            if(event.getMaterial() == Material.DIAMOND_AXE){
+            Material material = event.getMaterial();
+            ItemStack item = player.getInventory().getItemInHand();
+            String itemName = item.getItemMeta().getDisplayName();
+
+            if(material == Material.DIAMOND_AXE && itemName.equals("Thor")) {
 
                 Location eyeLocation = player.getEyeLocation();
+                Location targetLocation = eyeLocation.add(eyeLocation.getDirection().multiply(10));
+
                 player.getWorld().strikeLightning(eyeLocation);
-                player.sendMessage(ChatColor.WHITE + "Raio!");
+                player.sendMessage(ChatColor.WHITE + " Raio");
 
             }
         }
+
     }
 
 
