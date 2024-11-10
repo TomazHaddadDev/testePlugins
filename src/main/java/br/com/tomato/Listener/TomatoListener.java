@@ -51,7 +51,7 @@ public class TomatoListener implements Listener {
         System.out.println("Item deixado cair: " + item.getType() + " com durabilidade " + item.getDurability());
 
         if(item.getType() == Material.DIAMOND_SWORD){
-            event.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + " para lucy");
+            event.getPlayer().sendMessage(ChatColor.LIGHT_PURPLE + " teste");
         }
 
     }
