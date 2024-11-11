@@ -20,29 +20,54 @@ public class testCommand implements CommandExecutor {
 
         if(command.getName().equalsIgnoreCase("curar")){
 
-            if(args.length == 0){
+            if(args.length != 2){
                 player.sendMessage(ChatColor.RED + "Use: /curar <player> <quantidade>");
                 return false;
             }
 
             if(args.length == 2){
                 Player target = Bukkit.getServer().getPlayer(args[0]);
-
-                if(target == null){
-                    return false;
-                }
-
                 int quantity = Integer.parseInt(args[1]);
 
-                target.setHealth(target.getHealth() + quantity);
-                target.sendMessage(ChatColor.GREEN + " você curou " + quantity + ChatColor.RED + " corações");
-                target.playSound(target.getLocation(), Sound.CAT_PURREOW, 5, 5);
+                //Sem player
+                if(target == null){
+                    player.sendMessage(ChatColor.RED + "Jogador não encontrado");
+                    return false;
+                }
+                //Target com vida atual máxima
+                else if(target.getHealth() == target.getMaxHealth()){
+                    player.sendMessage(ChatColor.RED + "Jogador está com vida cheia!");
+                    return false;
+                }
+                //Cura maior que o possivel
+                if(target.getHealth() + quantity > target.getMaxHealth()){
+                    int healing = (int) (target.getMaxHealth() - target.getHealth());
+                    target.setHealth(target.getMaxHealth());
+                    sendCureFeedback(target, healing);
+                }
+                //Cura 0 ou negativa
+                else if(quantity <= 0){
+                    player.sendMessage(ChatColor.RED + "O valor da cura deve ser positivo!");
+                    return false;
+                }
+                //Correto
+                else {
+                    target.setHealth(target.getHealth() + quantity);
+                    sendCureFeedback(target, quantity);
+                }
+
+
 
             }
 
         }
 
         return false;
+    }
+
+    public void sendCureFeedback(Player target, int quantity){
+        target.sendMessage(ChatColor.GREEN + " você curou " + quantity + ChatColor.RED + " corações");
+        target.playSound(target.getLocation(), Sound.CAT_PURREOW, 5, 5);
     }
 
 }
