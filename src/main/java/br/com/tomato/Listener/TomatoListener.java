@@ -95,7 +95,7 @@ public class TomatoListener implements Listener {
             if(material == Material.DIAMOND_AXE && itemName.equals("Thor")) {
 
                 Location eyeLocation = player.getEyeLocation();
-                Location targetLocation = eyeLocation.add(eyeLocation.getDirection().multiply(10));
+                Location targetLocation = eyeLocation.add(eyeLocation.getDirection().multiply(20));
 
                 player.getWorld().strikeLightning(eyeLocation);
                 player.sendMessage(ChatColor.WHITE + " Raio");

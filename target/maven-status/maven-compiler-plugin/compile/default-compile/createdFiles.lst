@@ -1,2 +1,3 @@
-br\com\tomato\Listener\TomatoListener.class
 br\com\tomato\NovoTeste.class
+br\com\tomato\testCommand.class
+br\com\tomato\Listener\TomatoListener.class

@@ -2,3 +2,6 @@ name: novoTeste
 version: '1.0-SNAPSHOT'
 main: br.com.tomato.NovoTeste
 api-version: '1.21'
+commands:
+  curar:
+    description: Cura um jogador

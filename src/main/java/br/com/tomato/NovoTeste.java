@@ -17,8 +17,9 @@ public final class NovoTeste extends JavaPlugin{
 
     @Override
     public void onEnable() {
+        this.getCommand("curar").setExecutor(new testCommand());
         this.getServer().getPluginManager().registerEvents(new TomatoListener(), this);
-        Bukkit.getConsoleSender().sendMessage("Plugin Iniciado V1");
+        Bukkit.getConsoleSender().sendMessage("Plugin Iniciado COMMAND");
     }
 
     @Override
