@@ -11,6 +11,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 public class FireballListener implements Listener {
 
+    private long lastStrikeTime = 0;
+
     //Solta bola de fogo pela blazerod
     @EventHandler
     public void fireball(PlayerInteractEvent event){
@@ -21,6 +23,12 @@ public class FireballListener implements Listener {
 
             Player player = event.getPlayer();
             Material material = event.getMaterial();
+
+            long currentTime = System.currentTimeMillis();
+            if(currentTime - lastStrikeTime < 1000){
+                return;
+            }
+            lastStrikeTime = currentTime;
 
             if(material == Material.BLAZE_ROD){
                 Fireball fireball = player.launchProjectile(Fireball.class);

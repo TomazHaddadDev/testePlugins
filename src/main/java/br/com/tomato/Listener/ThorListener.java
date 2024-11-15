@@ -37,10 +37,8 @@ public class ThorListener implements Listener {
                 }
                 lastStrikeTime = currentTime;
 
-
                 Location eyeLocation = player.getEyeLocation();
                 Vector direction = eyeLocation.getDirection();
-
                 double maxRange = 40.0;
 
                 for (double distance = 1; distance <= maxRange; distance++) {
