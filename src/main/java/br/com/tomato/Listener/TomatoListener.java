@@ -16,6 +16,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.Set;
+
 public class TomatoListener implements Listener {
 
     //Ativado ao entrar no servidor
@@ -85,25 +87,27 @@ public class TomatoListener implements Listener {
     @EventHandler
     public void thor(PlayerInteractEvent event){
 
+
         if(event.getAction() == Action.RIGHT_CLICK_AIR){
 
             Player player = event.getPlayer();
+            player.sendMessage("1");
 
             Material material = event.getMaterial();
             ItemStack item = player.getInventory().getItemInHand();
             String itemName = item.getItemMeta().getDisplayName();
 
             if(material == Material.DIAMOND_AXE && itemName.equals("Thor")) {
+                Block targetBlock = player.getTargetBlock((Set<Material>) null, 100);
+                player.sendMessage("2");
+                if(targetBlock != null){
 
-                Location eyeLocation = player.getEyeLocation();
-                Location targetLocation = eyeLocation.add(eyeLocation.getDirection().multiply(20));
-
-                player.getWorld().strikeLightning(eyeLocation);
-                player.sendMessage(ChatColor.WHITE + " Raio");
-
+                    Location targetLocation =  targetBlock.getLocation();
+                    player.getWorld().strikeLightning(targetLocation);
+                    player.sendMessage(ChatColor.WHITE + " Raio!");
+                }
             }
         }
-
     }
 
     //Solta bola de fogo pela blazerod

@@ -1,4 +1,4 @@
-package br.com.tomato;
+package br.com.tomato.commands;
 
 import com.avaje.ebean.validation.NotNull;
 import org.bukkit.Bukkit;
@@ -9,7 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class testCommand implements CommandExecutor {
+public class healCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
