@@ -25,7 +25,7 @@ public class FireballListener implements Listener {
             if(material == Material.BLAZE_ROD){
                 Fireball fireball = player.launchProjectile(Fireball.class);
                 fireball.setVelocity(player.getLocation().getDirection().multiply(1.5));
-                player.sendMessage(ChatColor.DARK_RED + " bola de fogo lançada");
+                player.sendMessage(ChatColor.DARK_RED + "Bola de fogo lançada");
 
             }
 

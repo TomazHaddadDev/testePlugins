@@ -1,3 +1,5 @@
+br\com\tomato\commands\healCommand.class
+br\com\tomato\Listener\FireballListener.class
+br\com\tomato\Listener\ThorListener.class
 br\com\tomato\NovoTeste.class
-br\com\tomato\testCommand.class
-br\com\tomato\Listener\TomatoListener.class
+br\com\tomato\Listener\PlayerConnectionListener.class

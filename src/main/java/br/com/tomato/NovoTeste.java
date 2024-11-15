@@ -16,7 +16,7 @@ public final class NovoTeste extends JavaPlugin{
         this.getServer().getPluginManager().registerEvents(new PlayerConnectionListener(), this);
         this.getServer().getPluginManager().registerEvents(new ThorListener(), this);
         this.getServer().getPluginManager().registerEvents(new FireballListener(), this);
-        Bukkit.getConsoleSender().sendMessage("Plugin Iniciado COMMAND");
+        Bukkit.getConsoleSender().sendMessage("Plugin Iniciado v2");
     }
 
     @Override
