@@ -18,6 +18,8 @@ import java.util.Set;
 
 public class ThorListener implements Listener {
 
+    private long lastStrikeTime = 0;
+
     //Solta raio pelo machado de diamante renomeado
     @EventHandler
     public void thor(PlayerInteractEvent event){
@@ -28,6 +30,13 @@ public class ThorListener implements Listener {
             String itemName = item.getItemMeta().getDisplayName();
 
             if (item.getType() == Material.DIAMOND_AXE && itemName.equalsIgnoreCase("thor")) {
+
+                long currentTime = System.currentTimeMillis();
+                if(currentTime - lastStrikeTime < 1000){
+                    return;
+                }
+                lastStrikeTime = currentTime;
+
 
                 Location eyeLocation = player.getEyeLocation();
                 Vector direction = eyeLocation.getDirection();
