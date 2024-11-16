@@ -1,6 +1,8 @@
+br\com\tomato\commands\time\turnNightCommand.class
 br\com\tomato\Listener\FireballListener.class
 br\com\tomato\Listener\DropFlowerListener.class
 br\com\tomato\NovoTeste.class
 br\com\tomato\Listener\PlayerConnectionListener.class
 br\com\tomato\commands\healCommand.class
+br\com\tomato\commands\time\turnDayCommand.class
 br\com\tomato\Listener\ThorListener.class

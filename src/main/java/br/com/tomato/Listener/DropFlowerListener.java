@@ -1,6 +1,6 @@
 package br.com.tomato.Listener;
 
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -21,7 +21,7 @@ public class DropFlowerListener implements Listener {
         Material material = event.getItemDrop().getItemStack().getType();
 
         if(material == Material.RED_ROSE) {
-            player.sendMessage("teste");
+            player.sendMessage(ChatColor.LIGHT_PURPLE + "Para Lucy");
             Random rand = new Random();
 
             Location playerLocation = player.getLocation();

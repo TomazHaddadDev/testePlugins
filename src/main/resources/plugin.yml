@@ -5,3 +5,10 @@ api-version: '1.21'
 commands:
   curar:
     description: Cura um jogador
+    usage: /curar
+  day:
+    description: Seta o tempo para dia
+    usage: /day
+  night:
+    description: Seta o tempo para noite
+    usage: /night
