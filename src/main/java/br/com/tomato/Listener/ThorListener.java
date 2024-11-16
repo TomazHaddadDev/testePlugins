@@ -12,10 +12,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
-import java.util.Collections;
-
-import java.util.Set;
-
 public class ThorListener implements Listener {
 
     private long lastStrikeTime = 0;

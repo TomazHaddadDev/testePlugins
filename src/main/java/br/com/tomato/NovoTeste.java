@@ -1,5 +1,6 @@
 package br.com.tomato;
 
+import br.com.tomato.Listener.DropFlowerListener;
 import br.com.tomato.Listener.FireballListener;
 import br.com.tomato.Listener.PlayerConnectionListener;
 import br.com.tomato.Listener.ThorListener;
@@ -16,6 +17,7 @@ public final class NovoTeste extends JavaPlugin{
         this.getServer().getPluginManager().registerEvents(new PlayerConnectionListener(), this);
         this.getServer().getPluginManager().registerEvents(new ThorListener(), this);
         this.getServer().getPluginManager().registerEvents(new FireballListener(), this);
+        this.getServer().getPluginManager().registerEvents(new DropFlowerListener(), this);
         Bukkit.getConsoleSender().sendMessage("Plugin Iniciado v2");
     }
 
