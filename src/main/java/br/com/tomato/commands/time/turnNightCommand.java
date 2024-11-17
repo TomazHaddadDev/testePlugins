@@ -17,14 +17,12 @@ public class turnNightCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         if(command.getName().equalsIgnoreCase("night")){
-
             if(args.length != 0){
                 player.sendMessage(ChatColor.RED + "Use /night");
                 return false;
             }
 
             if(args.length == 0){
-
                 player.getWorld().setTime(13000);
                 player.sendMessage(ChatColor.GREEN + "Tempo setado para " + ChatColor.GRAY + ChatColor.BOLD + "Noite");
                 return true;

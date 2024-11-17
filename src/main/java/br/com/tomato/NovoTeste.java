@@ -4,6 +4,7 @@ import br.com.tomato.Listener.DropFlowerListener;
 import br.com.tomato.Listener.FireballListener;
 import br.com.tomato.Listener.PlayerConnectionListener;
 import br.com.tomato.Listener.ThorListener;
+import br.com.tomato.commands.giveItemCommand;
 import br.com.tomato.commands.healCommand;
 import br.com.tomato.commands.time.turnDayCommand;
 import br.com.tomato.commands.time.turnNightCommand;
@@ -19,6 +20,7 @@ public final class NovoTeste extends JavaPlugin{
         this.getCommand("curar").setExecutor(new healCommand());
         this.getCommand("day").setExecutor(new turnDayCommand());
         this.getCommand("night").setExecutor(new turnNightCommand());
+        this.getCommand("giveitem").setExecutor(new giveItemCommand());
         //Listeners
         this.getServer().getPluginManager().registerEvents(new PlayerConnectionListener(), this);
         this.getServer().getPluginManager().registerEvents(new ThorListener(), this);

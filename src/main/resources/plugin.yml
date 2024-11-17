@@ -12,3 +12,6 @@ commands:
   night:
     description: Seta o tempo para noite
     usage: /night
+  giveItem:
+    description: Da item ao jogador
+    usage: /giveitem

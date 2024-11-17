@@ -21,7 +21,6 @@ public class turnDayCommand implements CommandExecutor {
             if (args.length != 0) {
                 player.sendMessage(ChatColor.RED + "Use: /day");
             }
-
             if (args.length == 0) {
 
                 player.getWorld().setTime(1000);

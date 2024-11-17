@@ -6,3 +6,4 @@ br\com\tomato\Listener\PlayerConnectionListener.class
 br\com\tomato\commands\healCommand.class
 br\com\tomato\commands\time\turnDayCommand.class
 br\com\tomato\Listener\ThorListener.class
+br\com\tomato\commands\giveItemCommand.class
