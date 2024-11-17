@@ -13,3 +13,7 @@ commands:
     description: Da item ao jogador
   teleport:
     description: Teleporta a um jogador
+  tpa:
+    description: Solicita teleporte a um jogador
+  tpaccept:
+    description: Aceita o teleporte a um jogador

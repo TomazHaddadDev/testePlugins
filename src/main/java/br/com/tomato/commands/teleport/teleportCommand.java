@@ -1,4 +1,4 @@
-package br.com.tomato.commands;
+package br.com.tomato.commands.teleport;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
