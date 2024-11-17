@@ -54,6 +54,7 @@ public class giveItemCommand implements CommandExecutor {
                 ItemStack item = new ItemStack(material, quantity);
                 player.getInventory().addItem(item);
                 player.sendMessage(ChatColor.GREEN + "Item recebido");
+                return true;
             }
         }
         return false;

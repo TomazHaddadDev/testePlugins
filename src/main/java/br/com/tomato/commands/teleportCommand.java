@@ -36,6 +36,7 @@ public class teleportCommand implements CommandExecutor {
                 }
                 player.teleport(target.getLocation());
                 player.sendMessage(ChatColor.GREEN + "Teletransporte bem sucedido");
+                return true;
             }
         }
         return false;

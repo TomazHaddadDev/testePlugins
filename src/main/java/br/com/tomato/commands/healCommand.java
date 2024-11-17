@@ -55,7 +55,7 @@ public class healCommand implements CommandExecutor {
                     target.setHealth(target.getHealth() + quantity);
                     sendCureFeedback(target, quantity);
                 }
-
+                return true;
 
 
             }
