@@ -15,3 +15,6 @@ commands:
   giveItem:
     description: Da item ao jogador
     usage: /giveitem
+  teleport:
+    description: Teleporta a um jogador
+    usage: /teleport

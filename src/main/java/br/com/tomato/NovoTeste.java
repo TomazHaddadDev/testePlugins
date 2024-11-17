@@ -6,6 +6,7 @@ import br.com.tomato.Listener.PlayerConnectionListener;
 import br.com.tomato.Listener.ThorListener;
 import br.com.tomato.commands.giveItemCommand;
 import br.com.tomato.commands.healCommand;
+import br.com.tomato.commands.teleportCommand;
 import br.com.tomato.commands.time.turnDayCommand;
 import br.com.tomato.commands.time.turnNightCommand;
 import org.bukkit.*;
@@ -21,6 +22,7 @@ public final class NovoTeste extends JavaPlugin{
         this.getCommand("day").setExecutor(new turnDayCommand());
         this.getCommand("night").setExecutor(new turnNightCommand());
         this.getCommand("giveitem").setExecutor(new giveItemCommand());
+        this.getCommand("teleport").setExecutor(new teleportCommand());
         //Listeners
         this.getServer().getPluginManager().registerEvents(new PlayerConnectionListener(), this);
         this.getServer().getPluginManager().registerEvents(new ThorListener(), this);
