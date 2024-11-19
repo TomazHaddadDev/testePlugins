@@ -12,9 +12,11 @@ import org.bukkit.entity.Player;
 public class tpacceptCommand implements CommandExecutor {
 
     private final Map<Player, Player> tpaRequests;
+    private Map<Player, Long> tpaRequestTimes;
 
-    public tpacceptCommand(Map<Player, Player> tpaRequests){
+    public tpacceptCommand(Map<Player, Player> tpaRequests, Map<Player, Long> tpaRequestTimes) {
         this.tpaRequests = tpaRequests;
+        this.tpaRequestTimes = tpaRequestTimes;
     }
 
     @Override
@@ -31,6 +33,17 @@ public class tpacceptCommand implements CommandExecutor {
         }
 
         Player player = tpaRequests.get(target);
+
+        long requestTime = tpaRequestTimes.getOrDefault(target, 0L);
+        if(System.currentTimeMillis() - requestTime > 30000){
+            target.sendMessage(ChatColor.RED + "A solicitação de teleporte expirou.");
+            tpaRequests.remove(target);
+            tpaRequestTimes.remove(target);
+            return false;
+        }
+
+
+
         player.teleport(target.getLocation());
         target.sendMessage(ChatColor.GREEN + player.getName() + " foi teletransportado para você.");
         player.sendMessage(ChatColor.GREEN + "Você foi teletransportado para " + target.getName());

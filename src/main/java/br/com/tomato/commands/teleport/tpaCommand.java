@@ -12,9 +12,11 @@ import java.util.Map;
 public class tpaCommand implements CommandExecutor {
 
     private Map<Player, Player> tpaRequests;
+    private Map<Player, Long> tpaRequestTimes;
 
-    public tpaCommand(Map<Player, Player> tpaRequests) {
+    public tpaCommand(Map<Player, Player> tpaRequests, Map<Player, Long> tpaRequestTimes) {
         this.tpaRequests = tpaRequests;
+        this.tpaRequestTimes = tpaRequestTimes;
     }
 
 
@@ -49,11 +51,9 @@ public class tpaCommand implements CommandExecutor {
                     return false;
                 }
                 tpaRequests.put(target, player);
+                tpaRequestTimes.put(target, System.currentTimeMillis());
                 player.sendMessage(ChatColor.GREEN + "Solicitação enviada para " + target.getName());
                 target.sendMessage(ChatColor.YELLOW + player.getName() + " quer se teletransportar até você. Use /tpaccept para aceitar.");
-
-
-
             }
         }
         return false;

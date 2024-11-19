@@ -22,11 +22,13 @@ import java.util.Map;
 public final class NovoTeste extends JavaPlugin{
 
     private Map<Player, Player> tpaRequests;
+    private Map<Player, Long> tpaRequestTimes;
 
     @Override
     public void onEnable() {
 
         tpaRequests = new HashMap<>();
+        tpaRequestTimes = new HashMap<>();
 
         //Commands
         this.getCommand("curar").setExecutor(new healCommand());
@@ -34,8 +36,8 @@ public final class NovoTeste extends JavaPlugin{
         this.getCommand("night").setExecutor(new turnNightCommand());
         this.getCommand("giveitem").setExecutor(new giveItemCommand());
         this.getCommand("teleport").setExecutor(new teleportCommand());
-        getCommand("tpa").setExecutor(new tpaCommand(tpaRequests));
-        getCommand("tpaccept").setExecutor(new tpacceptCommand(tpaRequests));
+        getCommand("tpa").setExecutor(new tpaCommand(tpaRequests, tpaRequestTimes));
+        getCommand("tpaccept").setExecutor(new tpacceptCommand(tpaRequests, tpaRequestTimes));
         //Listeners
         this.getServer().getPluginManager().registerEvents(new PlayerConnectionListener(), this);
         this.getServer().getPluginManager().registerEvents(new ThorListener(), this);
