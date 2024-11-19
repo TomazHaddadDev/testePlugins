@@ -48,9 +48,9 @@ public class tpaCommand implements CommandExecutor {
                     player.sendMessage(ChatColor.RED + "Jogador já possui solicitação pendente");
                     return false;
                 }
-                tpaRequests.put(player, target);
+                tpaRequests.put(target, player);
                 player.sendMessage(ChatColor.GREEN + "Solicitação enviada para " + target.getName());
-                target.sendMessage(ChatColor.YELLOW + "quer se teletransportar até você. Use /tpaccept para aceitar.");
+                target.sendMessage(ChatColor.YELLOW + player.getName() + " quer se teletransportar até você. Use /tpaccept para aceitar.");
 
 
 
